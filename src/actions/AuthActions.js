@@ -1,5 +1,5 @@
-import axios from 'axios';
 import { Actions } from 'react-native-router-flux';
+import { HTTP } from '../http-common';
 import {
 	AUTH_UPDATE,
 	LOGIN_USER,
@@ -27,7 +27,7 @@ export const authLogOut = () => {
 export const loginUser = ({ email, password }) => {
 	return (dispatch) => {
 		dispatch({ type: LOGIN_USER });
-		axios.post(REGISTER_USER, {
+		HTTP.post(REGISTER_USER, {
 			email,
 			password,
 		})

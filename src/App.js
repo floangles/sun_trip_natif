@@ -23,13 +23,14 @@ class App extends Component {
 	}
 
 	render() {
+		console.log(store.getState())
 		if (!this.state.rehydrated) {
       return (
-      	<View>
-      		<Text>
-      			Loading
-      		</Text>
-      	</View>
+				<View>
+					<Text>
+						Loading
+					</Text>
+				</View>
       );
     }
 		return (
