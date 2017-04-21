@@ -17,7 +17,7 @@ class App extends Component {
   }
 
 	componentWillMount() {
-		persistStore(store, { storage: AsyncStorage, blacklist: ['authForm'] }, () => {
+		persistStore(store, { storage: AsyncStorage, blacklist: ['authForm', 'tripForm'] }, () => {
 			this.setState({ rehydrated: true });
 		});
 	}

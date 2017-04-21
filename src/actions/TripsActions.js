@@ -1,8 +1,15 @@
 import { Actions } from 'react-native-router-flux';
 import { HTTP } from '../http-common';
 
-import { TRIPS_FETCH_SUCCESS } from './types';
+import { TRIPS_FETCH_SUCCESS, TRIP_UPDATE } from './types';
 import { FETCH_TRIPS_URL } from '../Network';
+
+export const tripUpdate = ({ prop, value }) => {
+	return {
+		type: TRIP_UPDATE,
+		payload: { prop, value }
+	};
+};
 
 export const tripsFetch = () => {
   return (dispatch, getState) => {

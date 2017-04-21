@@ -26,6 +26,10 @@ class TripsList extends Component {
 		Actions.auth({ type: 'reset' });
 	}
 
+	createTrip() {
+		Actions.tripCreate();
+	}
+
 	createDataSource({ trips }) {
 		const ds = new ListView.DataSource({
 			rowHasChanged: (r1, r2) => r1 !== r2
@@ -54,6 +58,11 @@ class TripsList extends Component {
 				<CardSection>
 					<Button onPress={this.onButtonPress.bind(this)}>
 						log out
+					</Button>
+				</CardSection>
+				<CardSection>
+					<Button onPress={this.createTrip.bind(this)}>
+						Create
 					</Button>
 				</CardSection>
 			</Card>
