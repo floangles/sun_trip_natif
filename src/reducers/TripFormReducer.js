@@ -1,4 +1,4 @@
-import { TRIP_UPDATE } from '../actions/types';
+import { TRIP_UPDATE, TRIP_CREATE_SUCCESS } from '../actions/types';
 
 const INITIAL_STATE = {
 	name: '',
@@ -11,6 +11,8 @@ export default (state = INITIAL_STATE, action) => {
 	switch (action.type) {
 		case TRIP_UPDATE:
 			return { ...state, [action.payload.prop]: action.payload.value };
+		case TRIP_CREATE_SUCCESS:
+			return INITIAL_STATE;
 		default:
 			return state;
 	}

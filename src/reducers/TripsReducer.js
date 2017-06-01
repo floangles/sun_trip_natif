@@ -1,4 +1,4 @@
-import { TRIPS_FETCH_SUCCESS, TRIP_UPDATE } from '../actions/types';
+import { TRIPS_FETCH_SUCCESS } from '../actions/types';
 
 const INITIAL_STATE = {};
 

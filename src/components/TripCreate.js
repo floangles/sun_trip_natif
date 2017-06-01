@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { DatePickerIOS, Text, ScrollView, CameraRoll, Switch } from 'react-native';
+import { DatePickerIOS, Text, ScrollView } from 'react-native';
 import { connect } from 'react-redux';
-import { tripUpdate } from '../actions';
+import { tripUpdate, tripCreate } from '../actions';
 import { Card, CardSection, Input, Button } from './common';
 
 class TripCreate extends Component {
 
 	onButtonPress() {
 		const { name, destination, start_date, end_date } = this.props;
-		// this.props.trip.create({ name, destination, start_date, end_date })
+		this.props.tripCreate({ name, destination, start_date, end_date });
 	}
 
 	render() {
@@ -21,9 +21,6 @@ class TripCreate extends Component {
 							value={this.props.name}
 							onChangeText={value => this.props.tripUpdate({ prop: 'name', value })}
 						/>
-					</CardSection>
-					<CardSection>
-						CameraRoll
 					</CardSection>
 					<CardSection>
 						<Input
@@ -64,5 +61,5 @@ const mapStateToProps = (state) => {
 	return { name, destination, start_date, end_date, timeZoneOffsetInHours };
 };
 
-export default connect(mapStateToProps, { tripUpdate })(TripCreate);
+export default connect(mapStateToProps, { tripUpdate, tripCreate })(TripCreate);
 

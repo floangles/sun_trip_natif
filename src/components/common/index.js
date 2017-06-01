@@ -4,4 +4,5 @@ export * from './CardSection';
 export * from './Button';
 export * from './Spinner';
 export * from './TripCard';
+export * from './Map';
 

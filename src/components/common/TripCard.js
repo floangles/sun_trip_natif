@@ -1,36 +1,46 @@
-import React from 'react';
-import { Image, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { Image, Text, View, TouchableHighlight } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Card } from '../common';
 
-const TripCard = ({ image, name, destination, coTriperCount, date }) => {
-	const { containerStyle, overlayStyle, nameStyle, commonTextStyle, dateStyle, destinationStyle, triperStyle, iconStyle } = styles;
-	return (
-		<Card>
-			<Image
-			// <Image style={styles.imageStyle} source={{ uri: image }} />
-				source={{ uri: image }}
-				style={containerStyle}
-			>
-			<View style={overlayStyle} />
-			<Text style={{ ...nameStyle, ...commonTextStyle }}>
-				{name}
-			</Text>
-			<Text style={{ ...dateStyle, ...commonTextStyle }}>
-				{date}
-			</Text>
-			<Text style={{ ...destinationStyle }}>
-				{destination}
-			</Text>
-			<Text style={{ ...iconStyle, ...commonTextStyle }}>
-				<Icon name="user" size={13} color="#fff" style={iconStyle} />
-			</Text>
-			<Text style={{ ...triperStyle, ...commonTextStyle }}>
-				{coTriperCount}
-			</Text>
-			</Image>
-		</Card>
-	);
+class TripCard extends Component {
+
+	getTrip() {
+		Actions.tripShow();
+	}
+
+	render() {
+		const { containerStyle, overlayStyle, nameStyle, commonTextStyle, dateStyle, destinationStyle, triperStyle, iconStyle } = styles;
+		return (
+			<Card >
+				<TouchableHighlight onPress={this.getTrip.bind(this)}>
+				<Image
+					source={{ uri: this.props.image }}
+					style={containerStyle}
+					onPress={this.getTrip.bind(this)}
+				>
+				<View style={overlayStyle} />
+				<Text style={{ ...nameStyle, ...commonTextStyle }}>
+					{this.props.name}
+				</Text>
+				<Text style={{ ...dateStyle, ...commonTextStyle }}>
+					{this.props.date}
+				</Text>
+				<Text style={{ ...destinationStyle }}>
+					{this.props.destination}
+				</Text>
+				<Text style={{ ...iconStyle, ...commonTextStyle }}>
+					<Icon name="user" size={13} color="#fff" style={iconStyle} />
+				</Text>
+				<Text style={{ ...triperStyle, ...commonTextStyle }}>
+					{this.props.coTriperCount}
+				</Text>
+				</Image>
+				</TouchableHighlight>
+			</Card>
+		);
+	}
 };
 
 const styles = {

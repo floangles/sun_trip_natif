@@ -38,7 +38,9 @@ class TripsList extends Component {
 	}
 
 	renderRow(trip) {
+		console.log(trip);
 		return (
+
 			<TripCard
 				image={MAIN_URL + trip.photo.url}
 				name={trip.name}

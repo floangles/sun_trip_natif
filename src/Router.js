@@ -4,7 +4,8 @@ import { Scene, Router } from 'react-native-router-flux';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import LoginForm from './components/LoginForm';
 import TripsList from './components/TripsList';
-import TripCreate from './components/TripCreate'
+import TripCreate from './components/TripCreate';
+import Trip from './components/Trip';
 
 const RouterComponent = () => {
 	return (
@@ -23,10 +24,19 @@ const RouterComponent = () => {
 					key='tripslist'
 					component={TripsList}
 					title="Trips"
-					initial
 				/>
 
-				<Scene key='tripCreate' component={TripCreate} title="create a trip"/>
+				<Scene
+					key='tripCreate'
+					component={TripCreate}
+					title="create a trip"
+				/>
+				<Scene
+					key='tripShow'
+					component={Trip}
+					title="Localize my ass"
+					initial
+				/>
 
 			</Scene>
 		</Router>

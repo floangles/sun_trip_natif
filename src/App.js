@@ -17,13 +17,12 @@ class App extends Component {
   }
 
 	componentWillMount() {
-		persistStore(store, { storage: AsyncStorage, blacklist: ['authForm', 'tripForm'] }, () => {
+		persistStore(store, { storage: AsyncStorage, blacklist: ['authForm', 'tripForm', 'geoloc'] }, () => {
 			this.setState({ rehydrated: true });
 		});
 	}
 
 	render() {
-		console.log(store.getState())
 		if (!this.state.rehydrated) {
       return (
 				<View>

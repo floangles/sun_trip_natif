@@ -7,3 +7,4 @@ export const ASSET_URL = 'to_do';
 // URL OF THE API
 export const REGISTER_USER = 'register';
 export const FETCH_TRIPS_URL = 'trips';
+export const CREATE_TRIP_URL = 'trips';

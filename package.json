@@ -11,6 +11,8 @@
     "lodash": "^4.17.4",
     "react": "15.4.2",
     "react-native": "0.42.3",
+    "react-native-autobahnjs": "^0.1.6",
+    "react-native-maps": "^0.15.2",
     "react-native-router-flux": "^3.35.0",
     "react-native-vector-icons": "^4.0.1",
     "react-redux": "^5.0.3",
